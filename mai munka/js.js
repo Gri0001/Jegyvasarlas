@@ -1,52 +1,15 @@
-/* =========================================
-   SYMPHONYFEST 2026
-   Jegyvásárlási rendszer
-========================================= */
-
-
-/* =========================================
-   VÁLTOZÓK
-========================================= */
-
 let discountApplied = false;
 
-
-/* =========================================
-   DOM ELEMEK
-========================================= */
-
 const ticketForm = document.getElementById('ticketForm');
-
 const ticketType = document.getElementById('ticketType');
-
-const ticketQuantity =
-    document.getElementById('ticketQuantity');
-
-const promoCode =
-    document.getElementById('promoCode');
-
-const promoButton =
-    document.getElementById('promoButton');
-
-const promoMessage =
-    document.getElementById('promoMessage');
-
-const totalPriceDisplay =
-    document.getElementById('totalPriceDisplay');
-
-const submitBtn =
-    document.getElementById('submitBtn');
-
-const btnText =
-    document.getElementById('btnText');
-
-const btnSpinner =
-    document.getElementById('btnSpinner');
-
-
-/* =========================================
-   VÉGÖSSZEG SZÁMÍTÁSA
-========================================= */
+const ticketQuantity = document.getElementById('ticketQuantity');
+const promoCode = document.getElementById('promoCode');
+const promoButton = document.getElementById('promoButton');
+const promoMessage = document.getElementById('promoMessage');
+const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+const submitBtn = document.getElementById('submitBtn');
+const btnText = document.getElementById('btnText');
+const btnSpinner = document.getElementById('btnSpinner');
 
 function calculateTotal() {
 
@@ -63,18 +26,11 @@ function calculateTotal() {
     const quantity =
         parseInt(ticketQuantity.value, 10) || 1;
 
-
     let total = price * quantity;
-
-
-    /* 20% kedvezmény */
 
     if (discountApplied) {
         total = total * 0.8;
     }
-
-
-    /* Megjelenítés */
 
     totalPriceDisplay.innerText =
         total.toLocaleString('hu-HU') + ' Ft';
@@ -83,18 +39,11 @@ function calculateTotal() {
     return total;
 }
 
-
-/* =========================================
-   KUPON ÉRVÉNYESÍTÉSE
-========================================= */
-
 function applyPromo() {
 
     const promoInput =
         promoCode.value.trim().toUpperCase();
 
-
-    /* FLASH20 */
 
     if (promoInput === 'FLASH20') {
 
@@ -137,17 +86,9 @@ function applyPromo() {
     calculateTotal();
 }
 
-
-/* =========================================
-   RENDELÉS ELKÜLDÉSE
-========================================= */
-
 async function handleTicketPurchase(event) {
 
     event.preventDefault();
-
-
-    /* Gomb betöltési állapot */
 
     submitBtn.disabled = true;
 
@@ -156,14 +97,8 @@ async function handleTicketPurchase(event) {
 
     btnSpinner.classList.remove('d-none');
 
-
-    /* Kiválasztott jegy */
-
     const selectedOption =
         ticketType.options[ticketType.selectedIndex];
-
-
-    /* JSON payload */
 
     const orderPayload = {
 
@@ -194,10 +129,6 @@ async function handleTicketPurchase(event) {
 
     try {
 
-        /* =========================================
-           AJAX / FETCH REQUEST
-        ========================================== */
-
         const response = await fetch(
             'https://jsonplaceholder.typicode.com/posts',
             {
@@ -211,17 +142,11 @@ async function handleTicketPurchase(event) {
             }
         );
 
-
-        /* HTTP hiba */
-
         if (!response.ok) {
             throw new Error(
                 'Hálózati hiba történt a rendelés során.'
             );
         }
-
-
-        /* JSON válasz */
 
         const jsonResponseData =
             await response.json();
@@ -232,22 +157,12 @@ async function handleTicketPurchase(event) {
             jsonResponseData
         );
 
-
-        /* =========================================
-           SZIMULÁLT RENDELÉSI AZONOSÍTÓ
-        ========================================== */
-
         const simulatedOrderId =
             'SF-' +
             Math.floor(
                 100000 +
                 Math.random() * 900000
             );
-
-
-        /* =========================================
-           MODAL ADATOK FELTÖLTÉSE
-        ========================================== */
 
         document.getElementById('resOrderId')
             .innerText =
@@ -275,11 +190,6 @@ async function handleTicketPurchase(event) {
                 .toLocaleString('hu-HU') +
             ' Ft';
 
-
-        /* =========================================
-           BOOTSTRAP MODAL MEGJELENÍTÉSE
-        ========================================== */
-
         const modalElement =
             document.getElementById(
                 'orderSuccessModal'
@@ -291,11 +201,6 @@ async function handleTicketPurchase(event) {
 
 
         successModal.show();
-
-
-        /* =========================================
-           ŰRLAP RESET
-        ========================================== */
 
         ticketForm.reset();
 
@@ -322,10 +227,6 @@ async function handleTicketPurchase(event) {
 
     } finally {
 
-        /* =========================================
-           GOMB VISSZAÁLLÍTÁSA
-        ========================================== */
-
         submitBtn.disabled = false;
 
         btnText.innerText =
@@ -335,21 +236,10 @@ async function handleTicketPurchase(event) {
     }
 }
 
-
-/* =========================================
-   ESEMÉNYKEZELŐK
-========================================= */
-
-
-/* Jegytípus változás */
-
 ticketType.addEventListener(
     'change',
     calculateTotal
 );
-
-
-/* Darabszám változás */
 
 ticketQuantity.addEventListener(
     'input',
@@ -361,16 +251,10 @@ ticketQuantity.addEventListener(
     calculateTotal
 );
 
-
-/* Kupon */
-
 promoButton.addEventListener(
     'click',
     applyPromo
 );
-
-
-/* Enter a kuponmezőben */
 
 promoCode.addEventListener(
     'keydown',
@@ -385,17 +269,9 @@ promoCode.addEventListener(
     }
 );
 
-
-/* Form elküldése */
-
 ticketForm.addEventListener(
     'submit',
     handleTicketPurchase
 );
-
-
-/* =========================================
-   KEZDŐ ÁLLAPOT
-========================================= */
 
 calculateTotal();
