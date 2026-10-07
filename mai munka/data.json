@@ -1,0 +1,57 @@
+{
+  "diak": [
+    {
+      "cim": "Nyári Fesztivál 2026",
+      "szoveg": "Három nap, tíz zenekar, felejthetetlen hangulat",
+      "hatter": "linear-gradient(135deg, #5b247a, #1bcedf)"
+    },
+    {
+      "cim": "Rock Éjszaka",
+      "szoveg": "A legjobb hazai rockbandák egy színpadon",
+      "hatter": "linear-gradient(135deg, #8e0e00, #1f1c18)"
+    },
+    {
+      "cim": "Klasszikus Esték",
+      "szoveg": "Szimfonikus zene varázslatos környezetben",
+      "hatter": "linear-gradient(135deg, #134e5e, #71b280)"
+    }
+  ],
+  "esemenyek": [
+    {
+      "id": 1,
+      "nev": "Nyári Fesztivál",
+      "datum": "2026. július 17.",
+      "helyszin": "Budapest",
+      "ar": 14900,
+      "ikon": "🎪",
+      "szin": "linear-gradient(135deg, #5b247a, #1bcedf)"
+    },
+    {
+      "id": 2,
+      "nev": "Rock Éjszaka",
+      "datum": "2026. augusztus 8.",
+      "helyszin": "Budapest",
+      "ar": 9900,
+      "ikon": "🎸",
+      "szin": "linear-gradient(135deg, #8e0e00, #1f1c18)"
+    },
+    {
+      "id": 3,
+      "nev": "Klasszikus Esték",
+      "datum": "2026. szeptember 12.",
+      "helyszin": "Budapest",
+      "ar": 7500,
+      "ikon": "🎻",
+      "szin": "linear-gradient(135deg, #134e5e, #71b280)"
+    },
+    {
+      "id": 4,
+      "nev": "Jazz Fesztivál",
+      "datum": "2026. október 24.",
+      "helyszin": "Budapest",
+      "ar": 8800,
+      "ikon": "🎷",
+      "szin": "linear-gradient(135deg, #cc2b5e, #753a88)"
+    }
+  ]
+}

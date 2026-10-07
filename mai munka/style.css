@@ -1,0 +1,194 @@
+:root {
+  --hatter: #12101f;
+  --kartya: #1d1a33;
+  --kiemel: #ffc107;
+  --szoveg: #eceaf7;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  background: var(--hatter);
+  color: var(--szoveg);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.navbar {
+  background: rgba(18, 16, 31, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.navbar-brand {
+  color: var(--kiemel) !important;
+  letter-spacing: 1px;
+}
+
+.nav-link:hover {
+  color: var(--kiemel) !important;
+}
+
+header {
+  margin-top: 56px;
+}
+
+.dia {
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 15%;
+}
+
+.dia h1 {
+  font-weight: 800;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dia p {
+  font-size: 1.25rem;
+}
+
+.reklam-sav {
+  background: #b3001b;
+  text-align: center;
+  padding: 12px 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.villogo {
+  display: inline-block;
+  animation: villog 1s steps(2, start) infinite;
+}
+
+@keyframes villog {
+  to {
+    visibility: hidden;
+  }
+}
+
+.szekcio {
+  padding: 60px 0 20px;
+}
+
+.cim {
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.cim::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: var(--kiemel);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.esemeny-kartya {
+  background: var(--kartya);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.esemeny-kartya:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.esemeny-fejlec {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.esemeny-torzs {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.esemeny-torzs h5 {
+  font-weight: 700;
+}
+
+.ar {
+  color: var(--kiemel);
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-top: auto;
+}
+
+.urlap-kartya {
+  background: var(--kartya);
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.urlap-kartya .form-control,
+.urlap-kartya .form-select {
+  background: #14122a;
+  color: var(--szoveg);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.urlap-kartya .form-control:focus,
+.urlap-kartya .form-select:focus {
+  border-color: var(--kiemel);
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.2);
+}
+
+.osszeg {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--kiemel);
+  line-height: 38px;
+}
+
+.terkep-keret {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terkep-keret iframe {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  display: block;
+}
+
+.lablec {
+  margin-top: 60px;
+  padding: 24px 0;
+  background: #0b0a15;
+  color: #9a97b5;
+}
+
+.modal-content {
+  color: #222;
+}
+
+@media (max-width: 576px) {
+  .dia {
+    height: 320px;
+    padding: 0 10%;
+  }
+}
