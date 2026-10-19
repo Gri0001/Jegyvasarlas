@@ -1,0 +1,57 @@
+{
+  "diak": [
+    {
+      "cim": "Őszi Szuperkaland",
+      "szoveg": "Több mint 30 játék, egy hatalmas óriáskerék és végtelen nevetés",
+      "hatter": "linear-gradient(135deg, #ff4d5a, #ffc933)"
+    },
+    {
+      "cim": "Halloween Horror Night",
+      "szoveg": "Kísértetvasút, rémes labirintus és hátborzongató meglepetések",
+      "hatter": "linear-gradient(135deg, #5b1fa8, #ff7a18)"
+    },
+    {
+      "cim": "Gyerekparadicsom",
+      "szoveg": "Körhinta, mini hullámvasút és játszóház a legkisebbeknek",
+      "hatter": "linear-gradient(135deg, #12c2b3, #3a7bd5)"
+    }
+  ],
+  "esemenyek": [
+    {
+      "id": 1,
+      "nev": "Óriáskerék napijegy",
+      "datum": "Minden nap, 10–20 óra",
+      "helyszin": "Vidámpark, Budapest",
+      "ar": 6900,
+      "ikon": "🎡",
+      "szin": "linear-gradient(135deg, #ff4d5a, #ffc933)"
+    },
+    {
+      "id": 2,
+      "nev": "Horror Éjszaka",
+      "datum": "2026. október 31., 18–24 óra",
+      "helyszin": "Vidámpark, Budapest",
+      "ar": 8900,
+      "ikon": "👻",
+      "szin": "linear-gradient(135deg, #5b1fa8, #ff7a18)"
+    },
+    {
+      "id": 3,
+      "nev": "Gyerekparadicsom",
+      "datum": "Hétvégente, 10–18 óra",
+      "helyszin": "Vidámpark, Budapest",
+      "ar": 4900,
+      "ikon": "🎠",
+      "szin": "linear-gradient(135deg, #12c2b3, #3a7bd5)"
+    },
+    {
+      "id": 4,
+      "nev": "Hullámvasút VIP",
+      "datum": "Soron kívüli belépés, minden nap",
+      "helyszin": "Vidámpark, Budapest",
+      "ar": 12900,
+      "ikon": "🎢",
+      "szin": "linear-gradient(135deg, #e23d8f, #7b2ff7)"
+    }
+  ]
+}
